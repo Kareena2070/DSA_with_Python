@@ -33,3 +33,53 @@ else:
 # total time complexity is O(n^2)+O(n) == O(n^2)
 
 
+# Better force
+nums = [8, 8, 7, 6, 5]
+nums = [10, 10, 10, 10, 10]
+largest = nums[0]
+n = len(nums)
+for i in range(n):
+    if nums[i]>largest:
+        largest = nums[i]
+
+secondLargest = -1
+for j in range(n):
+    if nums[j] >secondLargest and nums[j]!= largest:
+        secondLargest = nums[j]
+        print("Second Largest Number is: ", secondLargest)
+        break
+else:
+    if secondLargest == -1:
+        print("Not found second largest number so it will: ",-1)
+
+# Time complexity 
+# 1st loop runs for O(n) time 
+# 2nd loop runs for O(n) time 
+# total time complexity is 0(n+n) =O(2n) that is O(n) only
+# improtent ( O(n) + O(n) = O(n) → Two passes through the array.)
+
+
+
+# Optimal force
+nums = [8, 8, 7, 6, 5]
+# nums = [10, 10, 10, 10, 10]
+n = len(nums)
+largestNum = nums[0]
+secondLargestNum = -1
+for i in range(n):
+    if nums[i] > largestNum:
+        secondLargestNum = largestNum
+        largestNum = nums[i]
+
+    elif nums[i]<largestNum and nums[i] >secondLargestNum:
+        secondLargestNum = nums[i]
+        print("Second Largest element in array: ", secondLargestNum)
+
+else:
+    if secondLargestNum ==-1:
+        print("Second largest number NOT found in array so: ",-1)
+
+# Time Complexity 
+# on loop runs so it time complexity is O(n)
+# important ( O(n) → One pass through the array.)
+
