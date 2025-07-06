@@ -39,3 +39,20 @@ print("The array after removing duplicate elements is ", removeDuplicate(nums))
 # space complexity is 0(n)  because every number will check
 
 
+# Optimal force 
+nums = [0, 0, 3, 3, 5, 6, 7, 8]
+def removeDup(nums):
+    i = 0
+    n = len(nums)
+    for j in range(i, n):
+        if nums[i] != nums[j]:
+            i+=1
+            nums[i]= nums[j]
+            
+    return i+1
+print("The array after removing duplicate elements is ",removeDup(nums))
+
+
+# Time complexity 
+# one loop is running so Time complexity = O(n)
+# splace complexity is o(1) because in that same array it will check
