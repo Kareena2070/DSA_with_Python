@@ -46,6 +46,32 @@ print(nums)
 
 
 # Optimal force solution
+def rotate_to_left(arr, k):
+    n = len(arr)
+    if n == 0:
+        return
+    k = k % n  # handle cases where k > n
+    if k > n:
+        return
+
+    # Step 1: Copy first k elements
+    temp = arr[:k]
+
+    # Step 2: Shift n-k elements to the left
+    for i in range(n - k):
+        arr[i] = arr[i + k]
+
+    # Step 3: Copy temp elements to the end
+    for i in range(k):
+        arr[n - k + i] = temp[i]
+
+# Example usage
+arr = [1, 2, 3, 4, 5, 6, 7]
+k = 5
+rotate_to_left(arr, k)
+print("After rotating to left by", k, "elements:")
+print(arr)
+
 
 
 
