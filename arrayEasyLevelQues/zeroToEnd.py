@@ -37,3 +37,36 @@ print(moveZero(nums))
 # space complexity = O(n)
 
 
+
+
+
+# Optimal force approach
+
+nums = [2,3,0, 1, 4, 0, 5, 2]
+nums = [0, 0, 0, 1, 3, -2]
+
+def moveZeroNum(nums):
+    n = len(nums)
+    j=-1
+    for i in range(n):
+        if nums[i]==0:
+            j=i
+            break
+    if j == -1:
+        return nums  # No zero found
+
+    for k in range(j+1,n):
+        if nums[k] !=0:
+            nums[j], nums[k] = nums[k], nums[j]
+            j+=1
+
+    return nums
+
+print(moveZeroNum(nums))
+
+
+# Time Complexity
+# loop 1 runs for O(n)
+# loop 2 runs for 0(n)
+# total time complexity = O(n)+O(n) == O(n)
+# space complexity is 0(1)
