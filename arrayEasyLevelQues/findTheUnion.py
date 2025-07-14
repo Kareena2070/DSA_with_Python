@@ -65,3 +65,7 @@ arr2 = [2, 3, 4, 4, 5, 11, 12]
 
 # union = find_union(arr1, arr2)
 print(find_union(arr1, arr2))
+
+# Time complexity 
+# here we are using multiple loop but any how its time complexity is O(arr1 + arr2 )
+# here we use O(arr1  + arr2) to returning, not to slove the algorithm
