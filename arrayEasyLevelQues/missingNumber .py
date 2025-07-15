@@ -32,6 +32,21 @@ print(missingNum(nums))
 # space complexity is O(1) no extra space
 
 
+# Sorting then Single Scan
 
+def missingNum(nums):
+    
+    n = len(nums)
+    # num = sorted(nums)       # if we use sort like here it will create a NEW LIST so, space complexity will increse like O(N) ==== original remains same
+    nums.sort()                # if we use sort like here it sorts in-place no extra space take so, time complexity is O(1)  ===== original list is changed
+    for i in range(n):
+        if nums[i] != i:
+            return i
+        return n
 
+print(missingNum(nums))
+
+# Time complexity 
+# here sort method is use so time complexity is O(n log n)
+# space complexity is O(1) beacuse we use arr.sort()
 
