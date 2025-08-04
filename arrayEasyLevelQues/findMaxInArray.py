@@ -16,4 +16,20 @@ print(findMax(arr))
 # Space Complexity = O(1) => no extra space is used
 
 
+# 2. Minor Improvements
+# You can make it:
+# More Pythonic by using max() function (for short solutions).
+# Safer by checking for an empty array.
+# Clearer by using descriptive variable names.
+
+def max(arr):
+    if not arr:     # Check if array is empty
+        return
+    max_num = arr[0]
+    for num in range(1, len(arr)):
+        if max_num < arr[num]:
+            max_num = arr[num]
+    return max_num
+print(max(arr))
+
 
