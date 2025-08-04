@@ -19,3 +19,26 @@ print(reverseArray(arr))
 
 
 
+# solve without any space 
+
+def reverse_array(arr):
+    left = 0
+    right = len(arr)-1
+
+    while left < right:
+        arr[left], arr[right] = arr[right], arr[left]
+        left+=1
+        right-=1
+    return arr
+print(reverse_array(arr))
+# Time complexity = O(n)
+# space complexity = O(1)
+
+
+# Pythonic way:
+def reverseArray(arr):
+    return arr[::-1]
+
+print(reverseArray(arr))
+# time complexity = O(n)
+# Space Complexity= O(n)
