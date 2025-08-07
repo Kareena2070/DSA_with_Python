@@ -36,3 +36,16 @@ reverseString2(name)
 # 🧠 Space = O(n)
 
 
+def reverseString3(s):
+    chars = []
+    for i in range(len(s) - 1, -1, -1):
+        chars.append(s[i])
+    return ''.join(chars)
+print(reverseString3(name))
+
+# time complexity 
+# append() + ''.join() → O(n) time
+# append() adds one character to a list in O(1).
+# join() combines the list into one string in a single pass (O(n)).
+# space complexity = O(n)
+# append + join only uses one list and one final string — more memory-efficient in practice.
