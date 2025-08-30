@@ -29,4 +29,12 @@ print(reverseString(s))
 
 
 
+def reveseString2(s):
+    for i in range(len(s)//2):
+        s[i], s[len(s)-1-i] = s[len(s)-1-i], s[i]
+    return s
+
+print(reveseString2(s))
+# time complexity = O(n)
+# space complexity = O(1)
 
