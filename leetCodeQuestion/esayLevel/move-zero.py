@@ -24,3 +24,17 @@ print(one+zero)
 # time complexity = O(n)
 # space complexity = O(n)+ O(n) = O(n)
 
+def num(nums):
+    num = 0
+    for i in range(len(nums)):
+            for j in range( -1,len(nums)):
+                if nums[j] ==0:
+                    nums[j], nums[i] = nums[i], nums[j]
+    return nums
+
+nums = [0,1,0,3,12]    
+print(num(nums))
+
+# time complexity = O(n^2)
+# space complexity = O(1)
+
