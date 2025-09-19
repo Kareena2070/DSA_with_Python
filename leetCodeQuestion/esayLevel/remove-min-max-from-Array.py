@@ -60,7 +60,26 @@ remove_min_max(nums)
 
 # Time complexity = O(n) because O(n)+O(n)+O(n) = O(n) 3 loop runs
 # Space complexity = O(n) because new array made
+# its remove the min and max num and give whole array
 
+nums = [2,10,7,5,4,1,8,6]
+nums = [0,-4,19,1,8,-2,-3,5]
+
+def removeMInMax(nums):
+    n = len(nums)
+    minIndex = nums.index(min(nums))
+    maxIndex = nums.index(max(nums))
+
+    if minIndex > maxIndex:
+        minIndex, maxIndex = maxIndex, minIndex
+
+    font = maxIndex+1 
+    back = n-minIndex
+    both = (minIndex+1)+(n-maxIndex)
+
+    return min(font, back, both)
+
+print(removeMInMax(nums))
 
 
 
