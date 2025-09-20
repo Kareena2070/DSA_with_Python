@@ -1,6 +1,6 @@
 # Find First Non-Repeating Character
 
-word = "aabbccde"
+word = "kareena"
 
 def nonRepeating(word):
     for i in range(len(word)):
