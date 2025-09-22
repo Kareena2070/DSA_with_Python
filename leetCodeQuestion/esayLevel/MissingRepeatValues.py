@@ -15,8 +15,8 @@
 
 
 
-grid = [[9,1,7],[8,9,2],[3,4,6]]
-# grid = [[1,3],[2,2]]
+# grid = [[9,1,7],[8,9,2],[3,4,6]]
+grid = [[1,3],[2,2]]
 from collections import Counter
 def findMissingRepeatedValues(grid):
     arr = []
@@ -46,3 +46,29 @@ print(findMissingRepeatedValues(grid))
 # for find repeated num = O(n^2)
 # for missing num = O(n^2)
 # so total time complexity is O(n^2)+O(n^2)+O(n^2) = O(n^2)   --- 3 pass(O(n^2))
+
+
+
+# Optimal approach
+def findMissingRepeatedValues(grid):
+    n = len(grid)
+    total = n * n * (n * n + 1) // 2  # expected sum
+    seen = set()
+    repeated = -1
+    actual_sum = 0
+
+    for row in grid:
+        for val in row:
+            actual_sum += val
+            if val in seen:
+                repeated = val
+            seen.add(val)
+
+    missing = total - (actual_sum - repeated)
+    return [repeated, missing]
+
+grid = [[9,1,7],[8,9,2],[3,4,6]]
+print(findMissingRepeatedValues(grid))  
+
+# Time Complexity: O(n²) (single pass)
+# Space Complexity: O(n²) only for seen if you want to detect repeated number (can be removed using in-place tricks in some cases)
