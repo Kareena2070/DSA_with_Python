@@ -62,4 +62,22 @@ print(merge(nums1, m, nums2, n)) #[1, 2, 2, 3, 5, 6]
 
 
 
+# In-Place Modification Approach
 
+def merge( nums1, m, nums2, n):
+
+        nums = []
+        for i in range(m):
+            nums.append(nums1[i])
+        for j in range(n):
+            nums.append(nums2[j])
+        nums.sort()
+        nums1[:] = nums   
+        return nums1
+
+nums1 = [1]
+m = 1
+nums2 = []
+n = 0
+
+print(merge(nums1, m, nums2, n)) #[1]    
