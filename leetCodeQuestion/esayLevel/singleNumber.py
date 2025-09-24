@@ -64,4 +64,16 @@ singleNumber(nums)
 # Overall: O(n)
 
 
+
+# Optimal Approach
+def singleNumber( nums):
+        result = 0
+        for num in nums:
+            result ^= num  # XOR each number
+        return result
+nums = [7, 3, 5, 3, 7]
+print(singleNumber(nums))
+
+# Time complexity: O(n)
+# Space complexity: O(1)
         
