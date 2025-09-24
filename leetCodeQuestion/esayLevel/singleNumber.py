@@ -43,6 +43,25 @@ singleNumber(nums)
 
 
 
+# better approach
+def singleNumber(nums):
+    feaq = Counter(nums)
+    for num, count in feaq.items():
+        if count == 1:
+            print(num)
+
+nums = [2,2,1]
+singleNumber(nums)
+
+# Time Complexity
+# Counter(nums) → O(n), because it iterates through all n elements to count frequencies.
+# for num, count in feaq.items() → O(k), where k is the number of unique elements. In worst case, k = n.
+# Overall: O(n)
+
+# Space Complexity
+# Counter(nums) stores counts of unique elements → O(k), worst case O(n).
+# feaq.items() iteration uses negligible extra space.
+# Overall: O(n)
 
 
         
