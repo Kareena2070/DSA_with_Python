@@ -15,9 +15,9 @@
 # Explanation: In this case, no transactions are done and the max profit = 0.
 
 
-# prices = [7,1,5,3,6,4]
-prices = [7,6,4,3,1]
-
+prices = [7,1,5,3,6,4]
+# prices = [7,6,4,3,1]
+# Brute froce Approch
 def maxProfit(prices):
     if len(prices) < 2:
         return 0
@@ -32,4 +32,24 @@ def maxProfit(prices):
 print(maxProfit(prices))
 
 # Time complexity = O(n^2)
+# space complexity = O(1)
+
+
+
+# Optimal approach 
+def maxProfit(prices):
+    if len(prices) <2:
+        return 0
+    maxProfit = 0
+    for i in range(len(prices)):
+        for j in range(i+1,len(prices)):
+            profit = prices[j] - prices[i]
+            if profit> maxProfit:
+                maxProfit = profit
+    return maxProfit
+
+prices = [7,6,4,3,1]
+print(maxProfit(prices))
+
+# time complexity = O(n)
 # space complexity = O(1)
