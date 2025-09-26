@@ -38,3 +38,14 @@ print(reveseString2(s))
 # time complexity = O(n)
 # space complexity = O(1)
 
+
+
+# in-place slice assignment [:] in Python
+def reverseString3(s):
+    rev = []
+    for i in range(len(s)-1,-1,-1):
+        rev.append(s[i])
+    s[:] = rev    #in-place  for leetcode
+    return rev
+s = ["h","e","l","l","o"]
+print(reverseString3(s))
