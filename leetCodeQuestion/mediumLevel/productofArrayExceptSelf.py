@@ -35,3 +35,25 @@ print(productExceptSelf(nums))
 
 # Time complexity = O(n^2)
 # space complexity = O(n)
+
+
+def productExceptSelf1(nums):
+    n = len(nums)
+    prefix = [1] * n
+    for i in range(1, n):
+        prefix[i] = prefix[i-1]*nums[i-1]
+
+    suffix = [1]*n
+    for i in range(n-2, -1, -1):
+        suffix[i] = suffix[i+1] * nums[i+1]
+
+    result = [0]*n
+    for i in range(n):
+        result[i] = prefix[i]*suffix[i]
+    
+    return result
+
+print(productExceptSelf1(nums))
+
+# Time complexity = O(n)+O(n)+O(n) == O(n)
+# space complexity = O(n)
