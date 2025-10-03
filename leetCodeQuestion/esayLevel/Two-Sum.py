@@ -15,6 +15,8 @@
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
 
+
+# brute force 
 nums = [2,3,4]
 target = 6
 
@@ -30,6 +32,21 @@ def twoSum(nums, target):
 print(twoSum(nums, target))
 
 
-# time complexity = O(n)
+# time complexity = O(n^2)
 # two loop runs
 # Space Complexity = O(1)
+
+
+
+# better approach
+def twoSum(nums, target):
+    freq = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in freq:
+            return [freq[complement], i]
+        freq[num] = i
+print(twoSum(nums, target))
+
+# Time complexity = O(n)
+# Soace complxity = O(n)  -- because dic(num_count sortes n number)
