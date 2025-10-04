@@ -36,3 +36,23 @@ print(findDiplicate(nums))
 # Python’s .sort() is Timsort, which requires O(1) extra space (in-place).
 
 
+# better approach 
+def findDiplicate1(nums):
+    num_count = {}
+    for num in nums:
+        if num in num_count:
+            num_count[num]+=1
+        else:
+            num_count[num]=1
+
+    for num in num_count:
+        if num_count[num] >1:
+            return num
+print(findDiplicate1(nums))
+
+# Time complexity to count num = O(n)
+# Time complexity of dict(num_count) = O(n)
+# Total time complexity = O(n)+O(n) = O(n)
+
+# Space complexity = O(n)  -- because dic(num_count sortes n number)
+
