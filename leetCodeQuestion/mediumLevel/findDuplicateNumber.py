@@ -56,3 +56,18 @@ print(findDiplicate1(nums))
 
 # Space complexity = O(n)  -- because dic(num_count sortes n number)
 
+
+# Optimal approach 
+def findDupliacte2(nums):
+    num_count = {}
+    for num in nums:
+        if num in num_count:
+            return num
+        else:
+            num_count[num]=1
+
+print(findDupliacte2(nums))
+
+# Time complexity = O(n)   -- one by pass
+# Space complexity = O(n)   -- because dic(num_count sortes n number)
+
