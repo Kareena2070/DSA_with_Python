@@ -41,3 +41,22 @@ print(removeOccurrences(s, part))
 # Space complexity = O(n) for storing the new string after each removal.
 
 
+
+
+# Approach 2: Without using str.replace() method
+
+def removeOccurrences2(s, part):
+    n = len(s)
+    m = len(part)
+    for i in range(n-m+1):
+        j= 0
+        while j<m and s[i+j] == part[j]:
+            j+=1
+
+        if j == m:
+            s= s[:i] +s[i+m:]
+            return removeOccurrences(s, part)
+    return
+print(removeOccurrences2(s, part))
+# Time complexity = O(n^2) in the worst case.
+# Space complexity = O(n) for storing the new string after each removal.
