@@ -29,3 +29,19 @@ print("Char count occurrences in a string: ", count)
 
 
 
+
+# 3. Bubble Sort Question
+# Q:Given an array of integers, sort the array in ascending order using Bubble Sort.
+# Example
+# Input:
+# [5, 2, 9, 1, 5, 6]
+# Output:
+# [1, 2, 5, 5, 6, 9]
+
+arr = [5, 2, 9, 1, 5, 6]
+
+for i in range(len(arr)):
+    for j in range(len(arr)-1):
+        if arr[i] < arr[j]:
+            arr[i], arr[j] = arr[j], arr[i]
+print("Sorted arr: ", arr)
