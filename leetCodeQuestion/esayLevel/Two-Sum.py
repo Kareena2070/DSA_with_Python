@@ -50,3 +50,15 @@ print(twoSum(nums, target))
 
 # Time complexity = O(n)
 # Soace complxity = O(n)  -- because dic(num_count sortes n number)
+
+# revision
+def twoSum(nums, target):
+    num ={}
+    for i in range(len(nums)):
+        nextNum = target - nums[i]
+        if nextNum in num:
+            return [num[nextNum], nums[i]]
+        
+        num[nums[i]] = i
+
+print(twoSum([20, 8, 2, 8, 10], 10))
