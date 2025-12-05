@@ -37,4 +37,27 @@ def isPanlindrome(s):
 print(isPanlindrome(s))
 
 # Time complexity = O(n)
-# Space complexity = O(1)
+# Space complexity = O(n)
+
+
+
+# Solution using two pointers
+def isPanlindrome2(s):
+    new_s = ""
+    for c in s:
+        if c.isalnum():
+            new_s+=c.lower()
+        
+    left = 0
+    right = len(new_s)-1
+    while left <right:
+        if new_s[left] != new_s[right]:
+            return False
+        left+=1
+        right-=1
+    return True
+print(isPanlindrome2(s))
+# Time complexity = O(n)
+# Space complexity = O(n)
+    
+        
