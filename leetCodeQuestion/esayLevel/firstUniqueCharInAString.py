@@ -4,23 +4,16 @@
 # Example 1:
 
 # Input: s = "leetcode"
-
 # Output: 0
-
 # Explanation:
-
 # The character 'l' at index 0 is the first character that does not occur at any other index.
 
 # Example 2:
-
 # Input: s = "loveleetcode"
-
 # Output: 2
 
 # Example 3:
-
 # Input: s = "aabb"
-
 # Output: -1
 
 s = "loveleetcode"
@@ -40,3 +33,18 @@ print(firstUniqCharBruteForce(s))
 # Space Complexity: O(1)
 
 
+
+
+# Optimized Solution
+from collections import Counter
+def firstUniqChar(s):
+    count = Counter(s)
+
+    for i in range(len(s)):
+        if count[s[i]] == 1:
+            return i
+    return -1
+
+print(firstUniqChar(s))
+# Time Complexity: O(n)   (dictionary - O(n)- woerse case + loop O(n))
+# Space Complexity: O(1)
