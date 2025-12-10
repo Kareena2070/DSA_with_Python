@@ -42,3 +42,34 @@ for _ in range(t):
     m = y-r
     print("Alice points:", r, "Bob points:", m)
     
+
+
+# Best Seats
+# Chef and Chefina are trying to watch a cricket game. They have already decided a row of N seats where they will seat, but they are yet to figure out the exact 2 seats they will buy.
+
+# The i-th seat in the row costs AiA i​coins to buy. Obviously, they have to sit next to each other, so they will only buy adjacent seats.
+
+# Can you figure out the minimum cost for them to buy 2 seats such that they are able to sit together?
+
+# Input Format
+# The first line of input will contain a single integer T, denoting the number of test cases.
+# Each test case consists of multiple lines of input.
+# The first line of each test case contains a single integer N - the number of seats in the row.
+# The second line contains    N integers - A1,A2,A3,......AN.
+# Output Format
+# For each test case, output on a new line the minimum cost of buying 2 adjacent seats.
+
+
+t = int(input("number of test cases: "))
+for _ in range(t):
+    n = int(input("Number of seats: "))
+    a = list(map(int, input("Seat numbers left: ").split()))
+    arr = []
+
+    for i in range(len(a)-1):
+        total = a[i]+a[i+1]
+        arr.append(total)
+            
+    num = min(arr)
+    print(num)
+            
